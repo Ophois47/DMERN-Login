@@ -7,7 +7,7 @@ const users = require("./routes/api/users");
 
 const app = express();
 
-// Bodyparser middleware
+// Bodyparser Middleware
 app.use(
   bodyParser.urlencoded({
     extended: false
@@ -24,13 +24,13 @@ mongoose
     'mongodb://localhost:27017/users',
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
-  .then(() => console.log("MongoDB Successfully Connected"))
+  .then(() => console.log("Successfully Connected to MongoDB"))
   .catch(err => console.log(err));
 
-// Passport middleware
+// Passport Middleware
 app.use(passport.initialize());
 
-// Passport config
+// Passport Config
 require("./config/passport")(passport);
 
 // Routes
